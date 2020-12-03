@@ -1,23 +1,133 @@
 <template>
-  <div id="app">
-    <HeaderPage></HeaderPage>
-    <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-    <router-view></router-view>
+  <div class="home-container">
+    <h1>hi</h1>
+
+    <!-- <img src="./img/curren-business.jpg" /> -->
+    <br />
+    <!--
+    <img src="../assets/img/wish-logo-800.png" alt="logo" />
+    -->
+
+    <div class="card-cart-container">
+      <div class="card-container">
+        <div v-for="(product, index) in products" :key="index" class="card">
+          <div class="img-container">
+            <img v-bind:src="product.img" />
+          </div>
+          <div class="card-text">
+            <h3>{{ product.description }}</h3>
+            <span>{{ product.price }}€</span>
+          </div>
+          <div class="card-icons">
+            <div class="like-container">
+              <input type="checkbox" name="checkbox" v-bind:id="product.id" />
+              <label v-bind:for="product.id">
+                <i class="fas fa-heart"></i>
+              </label>
+            </div>
+            <div class="add-to-cart">
+              <button>
+                <i class="fas fa-shopping-cart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HeaderPage from "./components/HeaderPage.vue";
-
 export default {
-  name: "App",
-  components: {
-    HeaderPage,
+  name: "Home",
+  data() {
+    return {
+      products: [
+        {
+          id: 1,
+          description: "Quarz Luxe",
+          price: 12,
+          img: "/img/quarz-luxe.jpg",
+        },
+        {
+          id: 2,
+          description: "Curren Business",
+          price: 20,
+          img: "/img/curren-business.jpg",
+        },
+        {
+          id: 3,
+          description: "Curren Sport",
+          price: 5,
+          img: "/img/curren-sport.jpg",
+        },
+        {
+          id: 4,
+          description: "Jaragar Racing",
+          price: 8,
+          img: "/img/jaragar-racing.jpg",
+        },
+        {
+          id: 5,
+          description: "Liges Hommes",
+          price: 3,
+          img: "/img/liges-hommes.jpg",
+        },
+        {
+          id: 6,
+          description: "Maserati Mechanical",
+          price: 65,
+          img: "/img/maserati-mechanical.jpg",
+        },
+        {
+          id: 7,
+          description: "Montre Mecanique",
+          price: 25,
+          img: "/img/montre-mecanique.jpg",
+        },
+        {
+          id: 8,
+          description: "Brand Designer",
+          price: 28,
+          img: "/img/brand-designer.jpg",
+        },
+        {
+          id: 9,
+          description: "Relogio Masculino",
+          price: 4,
+          img: "/img/relogio-masculino.jpg",
+        },
+        {
+          id: 10,
+          description: "Tissot Multifunction",
+          price: 29,
+          img: "/img/tissot-multifunction.png",
+        },
+        {
+          id: 11,
+          description: "Hip Hop Gold",
+          price: 87,
+          img: "/img/hiphop-gold.jpg",
+        },
+        {
+          id: 12,
+          description: "Mesh Genova",
+          price: 6,
+          img: "/img/mesh-genova.jpg",
+        },
+        {
+          id: 13,
+          description: "Mesh Genova",
+          price: 6,
+          img: "/img/mesh-genova.jpg",
+        },
+      ],
+    };
   },
 };
 </script>
 
-<style>
+<style scoped>
 /* @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 * {
   padding: 0;
@@ -159,6 +269,7 @@ nav .nav-container #icons i:hover {
 }
 .home-container .card-cart-container .card-container .card:hover .card-text {
   opacity: 1;
+  width: 300%;
   bottom: 2.3rem;
 }
 .home-container .card-cart-container .card-container .card .img-container {
