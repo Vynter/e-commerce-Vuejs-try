@@ -135,12 +135,12 @@ export default {
           price: 6,
           img: "/img/mesh-genova.jpg",
         },
-        {
-          id: 13,
-          description: "Mesh Genova",
-          price: 6,
-          img: "/img/mesh-genova.jpg",
-        },
+        // {
+        //   id: 13,
+        //   description: "Mesh Genova",
+        //   price: 6,
+        //   img: "/img/mesh-genova.jpg",
+        // },
       ],
       searchKey: "",
       liked: [],
